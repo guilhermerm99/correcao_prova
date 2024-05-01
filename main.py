@@ -1,5 +1,5 @@
 # Conteúdo do script principal (main.py)
-
+import relative_path
 import retangulos_enem
 import analise_regiao1
 import analise_regiao2

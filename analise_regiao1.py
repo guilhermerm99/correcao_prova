@@ -1,4 +1,5 @@
 import cv2
+import relative_path
 
 def executar_analise_regiao1():
     # Função para binarizar a imagem
@@ -33,7 +34,7 @@ def executar_analise_regiao1():
         return matricula[::-1]  # Inverter a matrícula antes de retornar
 
     # Ler a imagem da região
-    imagem_regiao = cv2.imread(r'regiao_enem\regiao_1.jpg')
+    imagem_regiao = cv2.imread(relative_path.resource_path('regiao_enem/regiao_1.jpg'))
 
     # Redimensionar a imagem (aumentar 3x)
     imagem_regiao = cv2.resize(imagem_regiao, None, fx=3, fy=3, interpolation=cv2.INTER_LINEAR)

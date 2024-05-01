@@ -1,6 +1,8 @@
 import os
 import cv2
 
+import relative_path
+
 # Variáveis globais para armazenar informações sobre a seleção de retângulos
 pontos = []
 selecionando_retangulo = False
@@ -40,10 +42,10 @@ def executar_retangulos_enem():
         return
 
     # Carregar a imagem do cartão de resposta
-    imagem = cv2.imread(r'provas_enem\aluno-1.jpg')
+    imagem = cv2.imread(relative_path.resource_path('provas_enem/aluno-1.jpg'))
 
     # Redimensionar a imagem para uma largura de 600 pixels
-    largura_nova = 650
+    largura_nova = 1080
     proporcao = largura_nova / imagem.shape[1]
     altura_nova = int(imagem.shape[0] * proporcao)
     imagem = cv2.resize(imagem, (largura_nova, altura_nova))
