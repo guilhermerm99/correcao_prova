@@ -49,9 +49,10 @@ def executar_analise_regiao1():
 
     # Extrair a matrícula da imagem binarizada
     matricula = extrair_matricula(imagem_binarizada)
+    matricula_pronta = matricula[::-1] # Hugo alterou aqui
 
     # Imprimir a matrícula invertida
-    print(f'Matrícula: {matricula[::-1]}')
+    print(f'Matrícula: {matricula_pronta}') # Hugo alterou aqui
 
 
 
