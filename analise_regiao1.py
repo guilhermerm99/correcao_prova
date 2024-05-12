@@ -18,12 +18,15 @@ def executar_analise_regiao1():
         for linha in range(8):
             digitos = []
             for coluna in range(10):
-                x1 = coluna * 50
-                y1 = linha * 50
-                x2 = (coluna + 1) * 50
-                y2 = (linha + 1) * 50
+                x1 = coluna * 60
+                y1 = linha * 110
+                x2 = coluna * 60 + 30
+                y2 = linha * 110 - 18
 
                 circulo = regiao_binarizada[y1:y2, x1:x2]
+                cv2.imshow('circulo', circulo)
+                cv2.waitKey(0)
+                cv2.destroyAllWindows()
                 altura, largura = circulo.shape[:2]
                 area_circulo = cv2.countNonZero(circulo)
                 if area_circulo > 0.15* altura * largura:
@@ -43,9 +46,9 @@ def executar_analise_regiao1():
     imagem_binarizada = binarizar_imagem(imagem_regiao)
 
     # Exibir a imagem binarizada
-    #cv2.imshow('Imagem Binarizada', imagem_binarizada)
-    #cv2.waitKey(0)
-    #cv2.destroyAllWindows()
+    # cv2.imshow('Imagem Binarizada', imagem_binarizada)
+    # cv2.waitKey(0)
+    # cv2.destroyAllWindows()
 
     # Extrair a matrícula da imagem binarizada
     matricula = extrair_matricula(imagem_binarizada)
